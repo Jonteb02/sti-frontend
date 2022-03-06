@@ -1,0 +1,89 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/* @TODO: fix the styling. This looks bad. */
+body {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#canvas {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+
+#source {
+  display: none;
+}
+
+#enemy01 {
+  display: none;
+}
+
+/* Unnecessary but might as well hide them for now*/
+#enemy02a01, #enemy02a02 {
+  display: none;
+}
+
+.mainFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+#playerScore, #playerLives {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+}
+
+#scoreForm{
+  position:absolute;
+  margin-top: 320px;
+  display: none;
+}
+.formStyle{
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  margin: 10px;
+  font-size: 20px;
+}
+
+#formButton{
+  display: flex;
+  margin: auto;
+}

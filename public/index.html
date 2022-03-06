@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Space Invaders</title>
+    </head>
+    <body>
+        <h1>Space Invaders</h1>
+        <h2>Score:&nbsp;<span id="playerScore"></span>&nbsp;Remaining lives:&nbsp;<span id="playerLives"></span></h2>
+        <div id="app"></div>
+        <canvas id="canvas" width="650" height="600"></canvas>
+        <img src="/images/char.png" alt="" id="source" />
+        <img src="/images/enemy01.png" alt="" id="enemy01" />
+        <img src="/images/enemy02a01.png" alt="" id="enemy02a01" />
+        <img src="/images/enemy02a02.png" alt="" id="enemy02a02" />
+        <div id="gameOver"></div>
+        <form id="scoreForm">
+            Your name:&nbsp;
+            <input name="player_name" class="formStyle" maxlength="20" type="text" id="player_name" placeholder="Enter name" autocomplete="off" required>
+            <br>Score:&nbsp;
+            <input name="player_score" class="formStyle" type="number" value="0" id="score" readonly></input><br>
+            <button onclick="submitHighScore()" type="submit" class="formStyle" id="formButton">End game</button>
+        </form>
+
+        <script src="js/index.js"></script>
+        <footer class="mainFooter">
+            <a href="https://www.flaticon.com/free-icons/space-invaders" title="space invaders icons">
+                Space invaders icons created by Freepik - Flaticon
+            </a>
+        </footer>
+    </body>
+</html>
