@@ -26,6 +26,15 @@ function age(){
 }
 
 //@TODO: this is a hacky solution that doesn't even work. Needs to be rewritten
+function gettopfiveSorted(data){
+  var items = Object.entries(data)
+  items.sort(function(first, second){
+      return second[1] - first[1];
+  })
+  items = items.slice(0, 5);
+  return items;
+}
+
 function createTable(data){
   var appElement = document.getElementById("leader")
   appElement.textContent = ""
