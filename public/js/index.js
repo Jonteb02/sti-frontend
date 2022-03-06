@@ -406,7 +406,7 @@ function submitHighScore(){
   console.log("getPlayerName() called. scoreFormObject.elements[player_name].value=" + playerName);
   //let data = {"user": playerName, "score": score}
   // let url ="http://localhost:3001/registerscore?user=" + playerName + "&score=" + playerScore;
-  let url ="https://jonathan-birgersson-backend.herokuapp.com//registerscore?user=" + playerName + "&score=" + playerScore;
+  let url ="https://jonathan-birgersson-backend.herokuapp.com/registerscore?user=" + playerName + "&score=" + playerScore;
   xhr.open("GET", url);
   xhr.send();
 }
