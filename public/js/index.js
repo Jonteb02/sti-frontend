@@ -17,12 +17,12 @@ function age(){
   var xhr = new XMLHttpRequest();
   // xhr.open("GET", "http://localhost:3001/highscores");
   xhr.open("GET", "https://jonathan-birgersson-backend.herokuapp.com/highscores")
-  xhr.onload = function(){
-    data = JSON.parse(this.response);
-    createTable(data);
-    setTimeout(age, UPDATE_INTERVAL);
-  }
-  xhr.send();
+  // xhr.onload = function(){
+  //   data = JSON.parse(this.response);
+  //   createTable(data);
+  //   setTimeout(age, UPDATE_INTERVAL);
+  // }
+  // xhr.send();
 }
 
 //@TODO: this is a hacky solution that doesn't even work. Needs to be rewritten
