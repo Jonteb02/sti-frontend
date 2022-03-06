@@ -17,39 +17,42 @@ function age(){
   var xhr = new XMLHttpRequest();
   // xhr.open("GET", "http://localhost:3001/highscores");
   xhr.open("GET", "https://jonathan-birgersson-backend.herokuapp.com/highscores")
-  // xhr.onload = function(){
-  //   data = JSON.parse(this.response);
-  //   createTable(data);
-  //   setTimeout(age, UPDATE_INTERVAL);
-  // }
-  // xhr.send();
+  xhr.onload = function(){
+    let data = JSON.parse(this.response);
+    createTable(data);
+    setTimeout(age, UPDATE_INTERVAL);
+  }
+  xhr.send();
 }
 
 //@TODO: this is a hacky solution that doesn't even work. Needs to be rewritten
 function createTable(data){
-  var appElement = document.getElementById("gameOver");
-  var aTable = document.createElement("table");
-  appElement.appendChild(aTable);
+  var appElement = document.getElementById("leader")
+  appElement.textContent = ""
+  console.log(appElement)
+  var aTable = document.createElement("table")
   
-  console.log("createTable. data.length=" + data.length);
-  for (let i = 0; i < 5; i++) {
-      aTable.appendChild(createRow(data[i].user, data[i].score));
-      console.log(data[i].user +" " + data[i].score);
-       
+  appElement.appendChild(aTable)
+
+  var items = gettopfiveSorted(data);
+  for([value, key] of items){
+      console.log(key + "->" + value)
+      aTable.appendChild(createRow(key, value))
   }
+  console.log(aTable)
 }
 
-function createRow(user, points){
-  var aRow = document.createElement("tr");
-  aRow.appendChild(createCell(user));
-  aRow.appendChild(createCell(points));   
-  return aRow;
+function createRow(name, time){
+  var aRow = document.createElement("tr")
+  aRow.appendChild(createCell(name))
+  aRow.appendChild(createCell(time))
+  return aRow
 }
 
 function createCell(content){
-  var aCell = document.createElement("td");
-  aCell.innerHTML = content;
-  return aCell;
+  var aCell = document.createElement("td")
+  aCell.innerHTML = content
+  return aCell
 }
 
 /**
