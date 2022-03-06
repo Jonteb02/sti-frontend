@@ -16,7 +16,7 @@ age();
 function age(){
   var xhr = new XMLHttpRequest();
   // xhr.open("GET", "http://localhost:3001/highscores");
-  xhr.open("GET", "https://https://jonathan-birgersson-backend.herokuapp.com/highscores")
+  xhr.open("GET", "https://jonathan-birgersson-backend.herokuapp.com/highscores")
   xhr.onload = function(){
     data = JSON.parse(this.response);
     createTable(data);
