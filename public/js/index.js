@@ -14,7 +14,7 @@ let data = [];
 let appElement = document.getElementById("scoreDiv"); //default=scoreDiv
 let aTable = document.getElementById("scoreTable");
 const xhr = new XMLHttpRequest();
-appElement.appendChild(aTable);
+appElement.appendChild(aTable); //@TODO: move this and clean up the code
 
 setTimeout(age, UPDATE_FIRST);
 // AJAX engine
@@ -63,9 +63,11 @@ function createRow(user, points){
   return aRow;
 }
 
+//@TODO: use flexbox to make space between user and score instead
 function createCell(content){
   let aCell = document.createElement("td");
   aCell.innerHTML = content;
+  aCell.innerHTML += "&nbsp";
   // console.log("createCell() called");
   return aCell;
 }
@@ -81,8 +83,8 @@ function createCell(content){
 
 // Game parameters
 const alienMargin = 40;     // alien.w + 10
-const maxAliensPerRow = 3; // default=10
-const maxAlienRows = 1;     // maximum amount of rows on screen at any given time. default=5
+const maxAliensPerRow = 10; // default=10
+const maxAlienRows = 5;     // maximum amount of rows on screen at any given time. default=5
 const verticalJump = 40;    // how far down a row moves (alien.h + 10)
 const topMargin = 40;       // leave the top of the canvas free in order to display currentScore and player.lives there
 
@@ -381,6 +383,7 @@ function detectWalls() {
 function win(){
   console.log("GAME WON -- all aliens defeated");
   currentScore *= player.lives;
+  dynDrawScore(); // update score in the header so the player doesn't feel cheated
   setHighScore(currentScore);
 }
 
@@ -391,9 +394,9 @@ function lose(){
 }
 
 function gameOver(){
-  dynDrawScore(); // update score in the header so the player doesn't feel cheated
+  dynDrawScore();
   playing = false;
-  scoreForm.style.display = "block";
+  scoreForm.style.display = "contents";
   canvas.style.background = "#333";
   if(player.lives <= 0){
     player.lives = 0;
