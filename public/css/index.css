@@ -87,7 +87,7 @@ h1 {
   border-radius: 6px; 
   margin: 10px;
   font-size: 20px;
-  display: flex;
+  text-align: center;
 }
 
 #formButton{
