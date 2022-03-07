@@ -424,7 +424,7 @@ function lose(){
 function gameOver(){
   dynDrawScore();
   playing = false;
-  scoreForm.hidden=false;
+  scoreForm.style.display = "block"
   canvas.style.background = "#333";
   if(player.lives <= 0){
     player.lives = 0;
@@ -448,7 +448,6 @@ function submitHighScore(){
   let url ="https://jonathan-birgersson-backend.herokuapp.com/registerscore?user=" + playerName + "&score=" + playerScore;
   xhr.open("GET", url);
   xhr.send();
-  scoreForm.hidden=true
 }
 
 function update(){
