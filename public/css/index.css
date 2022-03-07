@@ -75,9 +75,8 @@ h1 {
 }
 
 .scoreForm{
-  position:absolute;
   margin-top: 320px;
-  display: inline-block;
+  display: flex;
   border: 1px solid black;
 }
 .formStyle{
