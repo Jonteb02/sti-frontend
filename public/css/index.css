@@ -75,9 +75,10 @@ h1 {
 }
 
 .scoreForm{
-  margin-top: 320px;
+  margin-top: 5%;
   display: inline-block;
   border: 1px solid black;
+  align-self: center;
 }
 .formStyle{
   color: #fff;
