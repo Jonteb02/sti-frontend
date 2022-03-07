@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-/* @TODO: fix the styling. This looks bad. */
+
 body {
   background-color: #333;
   color: #fff;
@@ -34,20 +34,6 @@ body {
   display: none;
 }
 
-/* Unnecessary but might as well hide them for now*/
-#enemy02a01, #enemy02a02 {
-  display: none;
-}
-
-
-
-/* h1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 0;
-} */
-
 h1, h2 {
   display: flex;
   flex-direction: row;
@@ -75,7 +61,7 @@ h1 {
 }
 
 #scoreForm{
-  margin-top: 3%;
+  margin-top: 5%;
   display:none;
   align-self: center;
   text-align: center;
