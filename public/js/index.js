@@ -11,10 +11,10 @@ const UPDATE_INTERVAL = 5000;
 // let data = ["0", "0", "0", "0", "0"];
 // let data = {};
 // test making these global
-let appElement = document.getElementById("scoreDiv"); //default=scoreDiv
-let aTable = document.getElementById("scoreTable");
+// let appElement = document.getElementById("scoreDiv"); //default=scoreDiv
+// let aTable = document.getElementById("scoreTable");
 const xhr = new XMLHttpRequest();
-appElement.appendChild(aTable); //@TODO: move this and clean up the code
+// appElement.appendChild(aTable); //@TODO: move this and clean up the code
 
 setTimeout(age, UPDATE_FIRST);
 // AJAX engine
@@ -91,6 +91,7 @@ function createRow(user, points){
 function createCell(content){
 var aCell = document.createElement("td")
 aCell.innerHTML = content
+aCell.innerHTML += "&nbsp";
 
   // let aCell = document.createElement("td");
   // aCell.innerHTML = content;
