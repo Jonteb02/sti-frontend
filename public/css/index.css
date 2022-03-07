@@ -79,6 +79,7 @@ h1 {
   display:block;
   border: 1px solid black;
   align-self: center;
+  text-align: center;
 }
 .formStyle{
   color: #fff;
@@ -87,7 +88,6 @@ h1 {
   border-radius: 6px; 
   margin: 10px;
   font-size: 20px;
-  text-align: center;
 }
 
 #formButton{
