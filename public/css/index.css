@@ -141,7 +141,7 @@ body {
   background-color: #333;
   color: #fff;
   display: block;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -220,7 +220,7 @@ h1 {
 }
 
 #formButton{
-  align-self: center;
+  justify-self: center;
   display: block;
   margin: auto;
 }
