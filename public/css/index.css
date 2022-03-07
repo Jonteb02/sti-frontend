@@ -220,6 +220,7 @@ h1 {
 }
 
 #formButton{
+  align-self: center;
   display: block;
   margin: auto;
 }
