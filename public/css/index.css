@@ -9,7 +9,7 @@ body {
   background-color: #333;
   color: #fff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -75,7 +75,7 @@ h1 {
   font-size: 1.25rem;
 }
 
-#scoreForm{
+.scoreForm{
   position:absolute;
   margin-top: 320px;
   display: inline-block;
