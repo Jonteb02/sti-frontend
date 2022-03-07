@@ -210,7 +210,8 @@ h1 {
 #scoreForm{
   position:absolute;
   margin-top: 320px;
-  display: none;
+  display: inline-block;
+  border: 1px solid black;
 }
 .formStyle{
   color: #fff;
@@ -222,8 +223,7 @@ h1 {
 }
 
 #formButton{
-  border: 1px solid black;
-  display: inline-block;
+  display: flex;
   margin: auto;
 }
 
