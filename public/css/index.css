@@ -74,7 +74,7 @@ h1 {
   font-size: 1.25rem;
 }
 
-.scoreForm{
+#scoreForm{
   margin-top: 5%;
   display:block;
   align-self: center;
