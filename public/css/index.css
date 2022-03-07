@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -93,7 +93,7 @@ video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -127,12 +127,13 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+}  */
 
 /* END of reset code */
 
 * {
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /* @TODO: fix the styling. This looks bad. */
@@ -151,9 +152,11 @@ body {
 #canvas {
   display: flex;
   align-self: center;
-  background: #f0f0f0;
-  border-radius: 5px;
-  margin: auto;
+  background: #67d3ee;
+  border: 1px solid black;
+  margin-left: 5%;
+  display: inline-block;
+  box-shadow: 5px 5px 3px black;
 }
 
 #source {
@@ -223,16 +226,30 @@ h1 {
   margin: auto;
 }
 
-#scoreTable {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  margin: 10px;
+.leaderboard{
+  width: 30%;
+  height: 50vh;
+  border: 1px solid black;
+  left: 60%;
+  margin-left: 5%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  box-shadow: 5px 5px 3px black;
+  background-color: royalblue;
 }
-tr {
-  margin: 2px;
+
+.leaderContent{
+  text-decoration: underline;
 }
+
+#scoreDiv{
+  font-size: 4vh;
+  display: inline-block;
+  text-align: center;
+  margin-top: 7%;
+}
+
 .mainFooter {
   display: flex;
   justify-content: center;
