@@ -424,7 +424,7 @@ function lose(){
 function gameOver(){
   dynDrawScore();
   playing = false;
-  scoreForm.style.display = "contents";
+  // scoreForm.style.display = "contents";
   canvas.style.background = "#333";
   if(player.lives <= 0){
     player.lives = 0;
