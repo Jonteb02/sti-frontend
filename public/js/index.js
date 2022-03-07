@@ -9,7 +9,7 @@ const scoreFormObject = document.forms["scoreForm"];
 const UPDATE_FIRST = 0;
 const UPDATE_INTERVAL = 5000;
 // let data = ["0", "0", "0", "0", "0"];
-let data = [];
+// let data = {};
 // test making these global
 let appElement = document.getElementById("scoreDiv"); //default=scoreDiv
 let aTable = document.getElementById("scoreTable");
@@ -31,28 +31,52 @@ function age(){
   xhr.send();
 }
 
+function gettopfiveSorted(data){
+  var items = Object.entries(data)
+  items.sort(function(first, second){
+    return second[1] - first[1];
+  })
+  items = items.slice(0, 5);
+  return items;
+}
+
 //@TODO: hacky but currently working solution. Needs to be rewritten from scratch
 function createTable(data){
   // let appElement = document.getElementById("scoreDiv");
   // let aTable = document.getElementById("scoreTable");
   // appElement.appendChild(aTable);
   
-  console.log("createTable pre-for-loop. data.length=" + data.length);
-  if(data.length < 5){
-    for (let i = 0; i < 5; i++) {
-      aTable.appendChild(createRow(data[i].user, data[i].score));
-      console.log("createTable for-loop, i=" + i + " " + data[i].user + " " + data[i].score);
-    }
+  var appElement = document.getElementById("scoreDiv")
+  appElement.textContent = ""
+  console.log(appElement)
+  var aTable = document.createElement("scoreTable")
+
+  appElement.appendChild(aTable)
+
+  var items = gettopfiveSorted(data);
+  for([value, key] of items){
+    console.log(key + "->" + value)
+    aTable.appendChild(createRow(key, value))
   }
-  else if(data.length >= 5){
-    for(let i = 0; i < data.length; i++){
-      aTable.appendChild(createRow(data[i].user, data[i].score));
-      console.log("createTable else-statment loop, i=" + i + " " + data[i].user + " " + data[i].score);
-    }
-  }
-  else{
-    console.log("Something went wrong. createTable ended in the else-statement.");
-  }
+  console.log(aTable)
+
+
+  // console.log("createTable pre-for-loop. data.length=" + data.length);
+  // if(data.length < 5){
+  //   for (let i = 0; i < 5; i++) {
+  //     aTable.appendChild(createRow(data[i].user, data[i].score));
+  //     console.log("createTable for-loop, i=" + i + " " + data[i].user + " " + data[i].score);
+  //   }
+  // }
+  // else if(data.length >= 5){
+  //   for(let i = 0; i < data.length; i++){
+  //     aTable.appendChild(createRow(data[i].user, data[i].score));
+  //     console.log("createTable else-statment loop, i=" + i + " " + data[i].user + " " + data[i].score);
+  //   }
+  // }
+  // else{
+  //   console.log("Something went wrong. createTable ended in the else-statement.");
+  // }
 }
 
 function createRow(user, points){
@@ -65,9 +89,12 @@ function createRow(user, points){
 
 //@TODO: use flexbox to make space between user and score instead
 function createCell(content){
-  let aCell = document.createElement("td");
-  aCell.innerHTML = content;
-  aCell.innerHTML += "&nbsp";
+var aCell = document.createElement("td")
+aCell.innerHTML = content
+
+  // let aCell = document.createElement("td");
+  // aCell.innerHTML = content;
+  // aCell.innerHTML += "&nbsp";
   // console.log("createCell() called");
   return aCell;
 }
